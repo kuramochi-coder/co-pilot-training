@@ -1,3 +1,4 @@
+""" main module for the mini game """
 # Write a rock, paper, scissors, lizard, spock game
 # import the random module
 import random
@@ -5,21 +6,34 @@ import random
 
 # define main function that handles all the logic
 def main():
+    """main function that handles all the logic."""
     # define a list of choices
     choices = ["rock", "paper", "scissors", "lizard", "spock"]
 
+    # get the user's choice based on optons.
+    print("Enter your choice: ")
+    print("1. rock")
+    print("2. paper")
+    print("3. scissors")
+    print("4. lizard")
+    print("5. spock")
+
     # get the user's choice
     user_choice = input("Enter your choice: ")
+
+    # if the user's choice is 1
+    final_user_choice = choices[int(user_choice) - 1]
 
     # get the computer's choice
     computer_choice = random.choice(choices)
 
     # call the determine_outcome function
-    return determine_outcome(user_choice, computer_choice)
+    return determine_outcome(final_user_choice, computer_choice)
 
 
 # game starts here
 def determine_outcome(user_choice, computer_choice):
+    """determine the outcome of the game"""
     # define a dictionary of outcomes
     outcomes = {
         "rock": ["scissors", "lizard"],
